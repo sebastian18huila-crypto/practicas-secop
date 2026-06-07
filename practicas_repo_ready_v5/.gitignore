@@ -1,0 +1,70 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# =========================
+# Variables sensibles
+# =========================
+.env
+.env.local
+.env.development
+.env.production
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Mantener versionables los ejemplos
+!.env.example
+!backend/.env.example
+!backend/.env.railway.example
+!frontend/.env.example
+!frontend/.env.railway.example
+
+# =========================
+# Base de datos y archivos locales
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+Registro_CRM_Local.xlsx
+Registro_CRM_*.xlsx
+
+# =========================
+# Node / Vite
+# =========================
+node_modules/
+dist/
+.vite/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Sistema operativo / IDE
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/

@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Variables de branding (se sobrescriben dinámicamente desde JS) ── */
+:root {
+  --brand-50:  #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-500: #3b82f6;
+  --brand-600: #1a56db;
+  --brand-700: #1447c0;
+  --brand-900: #0e3a8c;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased text-sm;
+  }
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-brand-600 text-white
+           text-sm font-medium rounded-lg hover:bg-brand-700 transition-colors
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 border border-gray-300
+           text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50
+           transition-colors disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-red-50 text-red-700
+           border border-red-200 text-sm rounded-lg hover:bg-red-100 transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg text-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent
+           disabled:opacity-50 disabled:bg-gray-50;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .badge-alta  { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800; }
+  .badge-media { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800; }
+  .badge-baja  { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600; }
+}
+
+/* ── Spinner de carga ── */
+.loader {
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--brand-600);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Scrollbar personalizado ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
